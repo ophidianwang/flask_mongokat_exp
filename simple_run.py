@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from flask import Flask
 from flask_mongokat import MongoKat
-from proto import proto
+from example_app.models.proto import proto
 
 app = Flask(__name__)
 m_interface = MongoKat(app)
