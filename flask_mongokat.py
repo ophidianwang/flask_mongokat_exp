@@ -47,9 +47,7 @@ class mongokat_container(object):
         return getattr(self, name)
 
 
-class model_interface(object):
-    """request handler
-    """
+class MongoKat(object):
 
     def __init__(self, app=None):
         self.registered_models = []
@@ -62,9 +60,9 @@ class model_interface(object):
 
     def init_app(self, app):
         app.config.setdefault('MONGODB_HOSTS', '127.0.0.1:27017')
-        app.config.setdefault('MONGODB_DATABASE', 'colorsbee')
-        app.config.setdefault('MONGODB_USER', 'colorsbee')
-        app.config.setdefault('MONGODB_PASSWORD', 'colorsbee')
+        app.config.setdefault('MONGODB_DATABASE', 'flask')
+        app.config.setdefault('MONGODB_USER', 'admin')
+        app.config.setdefault('MONGODB_PASSWORD', 'admin')
 
         if hasattr(app, 'teardown_appcontext'):
             app.teardown_appcontext(self._teardown_request)
